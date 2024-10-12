@@ -4,13 +4,13 @@ import { DropZone } from "./DropZone/DropZoneIndex";
 import { Image } from "lucide-react";
 import Loading from "./Loading";
 
-export default function DropZoneContainer({ onChange, isLoading }: DropZoneProps) {
+export default function DropZoneContainer({ onChange, isLoading, theme }: DropZoneProps) {
   return (
-    <DropZone.Root>
+    <DropZone.Root theme={theme}>
       {!isLoading && (
         <>
-          <DropZone.Icon Icon={Image} />
-          <DropZone.Label label="Insert here your files" />
+          <DropZone.Icon theme={theme} Icon={Image} />
+          <DropZone.Label theme={theme} label="Insert here your files" />
           <DropZone.Input onChange={onChange} />
         </>
       )}
